@@ -1,0 +1,17 @@
+.container {
+    display: flex;
+    height: auto;
+  }
+  
+  .sidebar {
+    flex: 0 0 20%;
+    background-color: #f2f2f2;
+    padding: 20px;
+  }
+  
+  .contentArea {
+    flex: 0 0 80%;
+    background-color: #fff;
+    padding: 20px;
+  }
+  

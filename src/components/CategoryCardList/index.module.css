@@ -1,0 +1,8 @@
+.categoriesContainer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: orange;
+    padding: 20px 0px ;
+}
+  

@@ -1,0 +1,29 @@
+.signupPage {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+  .signupPage h2 {
+    text-align: center;
+  }
+  
+  .signupPage form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+  }
+  
+  .signupPage input {
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .signupPage button {
+    padding: 10px;
+  }
+  
+  .signupPage p {
+    text-align: center;
+    margin-top: 20px;
+  }
+  

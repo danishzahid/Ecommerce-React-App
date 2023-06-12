@@ -1,0 +1,30 @@
+.loginPage {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+  .loginPage h2 {
+    text-align: center;
+  }
+  
+  .loginPage form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+  }
+  
+  .loginPage input {
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .loginPage button {
+    padding: 10px;
+    margin-top: 10px;
+  }
+  
+  .loginPage p {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
