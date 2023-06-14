@@ -12,7 +12,7 @@ export const DataProvider = ({children}) =>{
             const response = await fetch("/api/products")
             if(response.status===200){
                 const responseData = await response.json();
-                console.log(responseData)
+                //console.log(responseData)
                 dispatch({
                     type:"INITIALIZE_PRODUCTS",
                     payload:responseData.products,
