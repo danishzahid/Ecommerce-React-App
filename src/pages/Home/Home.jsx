@@ -9,6 +9,7 @@ export const Home = () => {
         <div className="heading">
           <h1>Heding up to 3 lines will be here</h1>
           <button className="btn">Shop Now</button>
+          <h1>Heading up to 3 lines will be here</h1>
         </div>
         <div className="image">
           <img src={heroImage} alt="Example Image" />
