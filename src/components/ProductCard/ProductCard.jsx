@@ -1,7 +1,62 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import styles from './ProductCard.module.css';
+import { addItemToCartHandler } from '../../backend/controllers/CartController';
+import { AuthContext } from '../../contexts/AuthContext';
+import { Link } from 'react-router-dom';
 
 const ProductCard = ({product}) => {
+  const {user} = useContext(AuthContext);
+
+  const addItemToCartHandler = async (item) =>{
+    console.log(item)
+    try{
+      const response = await fetch("/api/user/cart",{
+        method:"POST",
+        headers:{
+          "Content-Type":"application/json",
+          authorization: user.token
+        },
+        body:JSON.stringify({
+          product:item
+        })
+      })
+
+      if(response.status===201||response.status===200){
+        const responseData = await response.json();
+        console.log(responseData)
+      }
+    }
+    catch(e){
+      console.log(e)
+    }
+  }
+
+  const addItemToWishlistHandler = async (item) =>{
+    console.log(item)
+    try{
+      const response = await fetch("/api/user/wishlist",{
+        method:"POST",
+        headers:{
+          "Content-Type":"application/json",
+          authorization: user.token
+        },
+        body:JSON.stringify({
+          product:item
+        })
+      })
+
+      if(response.status===201||response.status===200){
+        const responseData = await response.json();
+        console.log(responseData)
+      }
+    }
+    catch(e){
+      console.log(e)
+    }
+  }
+
+
+
   const renderRatingStars = (rating) => {
     const stars = [];
     const filledStars = Math.floor(rating);
@@ -25,7 +80,11 @@ const ProductCard = ({product}) => {
   };
   return (
     <div className={styles.card}>
+      <Link
+        to={`/product/${product.id}`}
+      >
       <img className={styles.cardImage} src={product.image} alt={product.name} />
+      </Link>
       <div className={styles.cardInfo}>
         <h3 className={styles.cardTitle}>{product.name}</h3>
         <div className={styles.rating}>
@@ -36,8 +95,16 @@ const ProductCard = ({product}) => {
         <p className={styles.cardDiscountedPrice}>${product.price}</p>
         <p className={styles.cardMaterial}>Material: {product.material}</p>
         <div className={styles.cardButtons}>
-          <button className={styles.addButton}>Add to Cart</button>
-          <button className={styles.wishlistButton}>Add to Wishlist</button>
+          <button onClick={
+            ()=>{
+              addItemToCartHandler(product);
+            }
+          } className={styles.addButton}>Add to Cart</button>
+          <button onClick={
+            ()=>{
+              addItemToWishlistHandler(product);
+            }
+          } className={styles.wishlistButton}>Add to Wishlist</button>
         </div>
       </div>
     </div>

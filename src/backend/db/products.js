@@ -8,6 +8,7 @@ import { v4 as uuid } from "uuid";
 export const products = [
   {
     _id: uuid(),
+    id: 1,
     name: "Men's Kurta",
     material: "cotton",
     price: 699,
@@ -20,6 +21,7 @@ export const products = [
   {
   
     _id: uuid(),
+    id: 2,
     name: "Men's Jawahar Bandi",
     material: "Mixed-Cotton",
     price: 1599,
@@ -31,6 +33,7 @@ export const products = [
   },
   {
     _id: uuid(),
+    id: 3,
     name: "Linen Shirting fabrics",
     material: "Linen",
     price: 1249,
@@ -42,6 +45,7 @@ export const products = [
   },
   {
     _id: uuid(),
+    id: 4,
     name: "Puja Special Ethenic Dhoti",
     material: "Cotton",
     price: 1149,
@@ -53,6 +57,7 @@ export const products = [
   },
   {
     _id: uuid(),
+    id: 5,
     name: "Khadi-Silk Saari",
     material: "kadi-silk",
     price: 1599,
@@ -64,6 +69,7 @@ export const products = [
   },
   {
     _id: uuid(),
+    id: 6,
     name: "Woolen Suit Piece",
     material: "wool",
     price: 1099,
@@ -75,6 +81,7 @@ export const products = [
   },
   {
     _id: uuid(),
+    id: 7,
     name: "Kashmiri wool-work shawl",
     material: "pure-wool",
     price: 2599,
@@ -86,6 +93,7 @@ export const products = [
   },
   {
     _id: uuid(),
+    id: 8,
     name: "Cotton Suit fabric length",
     material: "cotton",
     price: 399,
@@ -97,6 +105,7 @@ export const products = [
   },
   {
     _id: uuid(),
+    id: 9,
     name: "MonteCarlo Double Layer Blanket",
     material: "Wool",
     price: 2999,
@@ -108,6 +117,7 @@ export const products = [
   },
   {
     _id: uuid(),
+    id: 10,
     name: "Khadi Garam Black Blanket",
     material: "Woolen-Khadi",
     price: 499,
@@ -119,6 +129,7 @@ export const products = [
   },
   {
     _id: uuid(),
+    id: 11,
     name: "Jaipuri Woolen Razai",
     material: "wool",
     price: 3499,
@@ -130,6 +141,7 @@ export const products = [
   },
   {
     _id: uuid(),
+    id: 12,
     name: "Cotswool Shirting Fabric Length",
     material: "Cots-Wool",
     price: 449,

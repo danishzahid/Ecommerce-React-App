@@ -5,9 +5,10 @@ import { useContext, useState } from 'react';
 import { AuthContext } from '../../contexts/AuthContext';
 
 export const SignUpPage = () =>{
-  
+
   const navigate = useNavigate();
-  const [name, setName] = useState("");
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -22,17 +23,28 @@ export const SignUpPage = () =>{
                     "Content-Type":"application/json"
                 },
                 body:JSON.stringify({
-                    name,
+                    firstName,
+                    lastName,
                     email,
                     password,
                 })
             }
             )
+            
             const responseData = await response.json();
-            console.log(responseData);
-            setUser({user:responseData.createdUser, token:responseData.encodedToken})
-            navigate("/products");
-          
+            //console.log(response);
+            if(response.status===201){
+                setUser({user:responseData.createdUser, token:responseData.encodedToken})
+                navigate("/products");
+            }
+            if(response.status===422){
+                console.log("chutiya hai kya lawde")
+            }
+            // setUser({user:responseData.createdUser, token:responseData.encodedToken})
+            // navigate("/products");
+            
+            
+            
           }
           catch(e){
               console.log(e)
@@ -48,10 +60,21 @@ export const SignUpPage = () =>{
       }}>
         <input onChange={
           (e)=>{
-            setName(e.target.value)
+            setFirstName(e.target.value)
           }
         }
-        value={name}
+        value={
+          firstName
+        }
+         type="text" placeholder="Name" />
+         <input onChange={
+          (e)=>{
+            setLastName(e.target.value)
+          }
+        }
+        value={
+          lastName
+        }
          type="text" placeholder="Name" />
         <input 
         onChange={

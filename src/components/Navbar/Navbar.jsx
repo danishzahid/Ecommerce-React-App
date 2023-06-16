@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   return (
@@ -35,50 +36,38 @@ const Navbar = () => {
         />
       </div>
       <div>
-        <a
-          href="/products"
-          style={{
+        <Link to={"/products"} style={{
             marginLeft: '10px',
             marginRight: '10px',
             textDecoration: 'none',
             color: '#333',
-          }}
-        >
-          Products
-        </a>
-        <a
-          href="/wishlist"
-          style={{
+          }}>
+        Products
+        </Link>
+        <Link to={"/wishlist"} style={{
             marginLeft: '10px',
             marginRight: '10px',
             textDecoration: 'none',
             color: '#333',
-          }}
-        >
-          Wishlist
-        </a>
-        <a
-          href="/cart"
-          style={{
+          }}>
+        Wishlist
+        </Link>
+        <Link to={"/cart"} style={{
             marginLeft: '10px',
             marginRight: '10px',
             textDecoration: 'none',
             color: '#333',
-          }}
-        >
-          Cart
-        </a>
-        <a
-          href="/profile"
-          style={{
+          }}>
+        Cart
+        </Link>
+        <Link to={"/profile"} style={{
             marginLeft: '10px',
             marginRight: '10px',
             textDecoration: 'none',
             color: '#333',
-          }}
-        >
-          Profile
-        </a>
+          }}>
+        Profile
+        </Link>
         <button
           style={{
             marginLeft: '10px',
