@@ -1,6 +1,7 @@
 import React from "react";
 import CartProductComponent from "../CartProductComponent/CartProductComponent";
 import styles from "./CartPage.module.css";
+import Checkout from "../checkout/Checkout";
 
 const CartPage = ({ cart }) => {
   return (
@@ -11,11 +12,12 @@ const CartPage = ({ cart }) => {
           return (
             <CartProductComponent
               key={item.id}
-              image={item.image}
-              name={item.name}
-              price={item.price}
-              qty={item.qty}
-              id={item._id}
+              // image={item.image}
+              // name={item.name}
+              // price={item.price}
+              // qty={item.qty}
+              // id={item._id}
+              product={item}
             />
           );
         })}
@@ -23,6 +25,7 @@ const CartPage = ({ cart }) => {
       <div className={styles.checkout}>
         <h2 className={styles.heading}>Checkout</h2>
         {/* Placeholder for checkout component */}
+        <Checkout />
       </div>
     </div>
   );

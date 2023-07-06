@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 import styles from "./SignUpPage.module.css";
 import { useContext, useState } from "react";
@@ -12,6 +12,9 @@ export const SignUpPage = () => {
   const [password, setPassword] = useState("1234");
 
   const { user, setUser } = useContext(AuthContext);
+  const location = useLocation();
+  console.log(location);
+  const comingFrom = location.state?.from?.pathname || "/products";
 
   const signUpHandler = async () => {
     try {
@@ -36,7 +39,7 @@ export const SignUpPage = () => {
           user: responseData.createdUser,
           token: responseData.encodedToken,
         });
-        navigate("/products");
+        navigate(`${comingFrom}`, { replace: true });
       }
       if (response.status === 422) {
         console.log("chutiya hai kya lawde");

@@ -3,9 +3,12 @@ import styles from "./ProductCard.module.css";
 import { addItemToCartHandler } from "../../backend/controllers/CartController";
 import { AuthContext } from "../../contexts/AuthContext";
 import { Link } from "react-router-dom";
+import { DataContext } from "../../contexts/DataContext";
+import { toast } from "react-toastify";
 
 const ProductCard = ({ product }) => {
   const { user } = useContext(AuthContext);
+  const { state, dispatch } = useContext(DataContext);
 
   const addItemToCartHandler = async (item) => {
     console.log(item);
@@ -24,6 +27,7 @@ const ProductCard = ({ product }) => {
       if (response.status === 201 || response.status === 200) {
         const responseData = await response.json();
         console.log(responseData);
+        dispatch({ type: "SET_CART", payload: responseData.cart });
       }
     } catch (e) {
       console.log(e);
@@ -47,6 +51,7 @@ const ProductCard = ({ product }) => {
       if (response.status === 201 || response.status === 200) {
         const responseData = await response.json();
         console.log(responseData);
+        dispatch({ type: "SET_WISHLIST", payload: responseData.wishlist });
       }
     } catch (e) {
       console.log(e);
@@ -107,7 +112,18 @@ const ProductCard = ({ product }) => {
         <div className={styles.cardButtons}>
           <button
             onClick={() => {
-              addItemToCartHandler(product);
+              console.log(state.cart);
+              console.log(
+                state.cart.filter((item) => item.id == product.id).length
+              );
+              if (
+                state.cart.filter((item) => item.id == product.id).length == 0
+              ) {
+                console.log("not in cart");
+                addItemToCartHandler(product);
+              } else {
+                console.log("already in cart");
+              }
             }}
             className={styles.addButton}
           >
@@ -115,7 +131,30 @@ const ProductCard = ({ product }) => {
           </button>
           <button
             onClick={() => {
-              addItemToWishlistHandler(product);
+              console.log("wishlist");
+              console.log(state.wishlist);
+              console.log(
+                state.wishlist.filter((item) => item.id == product.id).length
+              );
+              if (
+                state.wishlist.filter((item) => item.id == product.id).length ==
+                0
+              ) {
+                addItemToWishlistHandler(product);
+              } else {
+                console.log("already in wishlist");
+                toast.error("Already in wishlist", {
+                  position: "top-center",
+                  autoClose: 2000,
+                  hideProgressBar: true,
+                  closeOnClick: true,
+                  pauseOnHover: true,
+                  draggable: true,
+                  progress: undefined,
+                });
+
+                // toast.error("Already in wishlist");
+              }
             }}
             className={styles.wishlistButton}
           >

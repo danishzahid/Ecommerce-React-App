@@ -3,11 +3,13 @@ import styles from "./CartProductComponent.module.css";
 import { AuthContext } from "../../contexts/AuthContext";
 import { DataContext } from "../../contexts/DataContext";
 
-const CartProductComponent = ({ image, name, price, qty, id }) => {
+const CartProductComponent = ({ product }) => {
+  const { image, name, price, qty, _id } = product;
   const { user } = useContext(AuthContext);
   const { state, dispatch } = useContext(DataContext);
   const handleCartQuantity = async (action, productId) => {
     console.log(action, productId);
+
     const fetchedProductAndQuantity = await fetch(
       `/api/user/cart/${productId}`,
       {
@@ -29,10 +31,56 @@ const CartProductComponent = ({ image, name, price, qty, id }) => {
 
   const handleMoveToWishlist = () => {
     // Handle move to wishlist functionality here
+    //add to wishlist wala logic lagega yaha pe check ke sath
+    // delete from cart bhi karna hoga
+    const addItemToWishlistHandler = async (item) => {
+      console.log(item);
+      try {
+        const response = await fetch("/api/user/wishlist", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            authorization: user.token,
+          },
+          body: JSON.stringify({
+            product: item,
+          }),
+        });
+
+        if (response.status === 201 || response.status === 200) {
+          const responseData = await response.json();
+          console.log(responseData);
+          dispatch({ type: "SET_WISHLIST", payload: responseData.wishlist });
+        }
+      } catch (e) {
+        console.log(e);
+      }
+    };
+    addItemToWishlistHandler(product);
+    handleRemoveFromCart(_id);
   };
 
   const handleRemoveFromCart = () => {
     // Handle remove from cart functionality here
+    const removeProductFromCart = async () => {
+      try {
+        const response = await fetch(`/api/user/cart/${_id}`, {
+          method: "DELETE",
+          headers: {
+            "Content-Type": "application/json",
+            authorization: user.token,
+          },
+        });
+        if (response.status === 200) {
+          const responseData = await response.json();
+          console.log(responseData);
+          dispatch({ type: "SET_CART", payload: responseData.cart });
+        }
+      } catch (e) {
+        console.log(e);
+      }
+    };
+    removeProductFromCart();
   };
 
   return (
@@ -45,7 +93,7 @@ const CartProductComponent = ({ image, name, price, qty, id }) => {
           <button
             className={styles.quantityButton}
             onClick={() => {
-              handleCartQuantity("decrement", id);
+              handleCartQuantity("decrement", _id);
             }}
           >
             -
@@ -54,7 +102,7 @@ const CartProductComponent = ({ image, name, price, qty, id }) => {
           <button
             className={styles.quantityButton}
             onClick={() => {
-              handleCartQuantity("increment", id);
+              handleCartQuantity("increment", _id);
             }}
           >
             +

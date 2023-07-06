@@ -1,10 +1,12 @@
 import "./App.css";
 import logo from "./logo.png";
-import Mockman from "mockman-js"
+import Mockman from "mockman-js";
 import { Route, Routes } from "react-router";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 import { Home } from "./pages/Home/Home";
-import {ErrorComponent} from "./pages/ErrorPage/ErrorComponent"
+import { ErrorComponent } from "./pages/ErrorPage/ErrorComponent";
 
 import { LoginComponent } from "./pages/Auth/LoginComponent";
 import { CartComponent } from "./pages/Cart/CartComponent";
@@ -22,18 +24,34 @@ import IndividualProduct from "./pages/IndividualProductPage/IndividualProduct";
 function App() {
   return (
     <div className="App">
+      <ToastContainer />
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/error" element={<ErrorComponent />} />
         <Route path="/product/:productId" element={<IndividualProduct />} />
         <Route path="/login" element={<LoginComponent />} />
-        <Route path="/cart" element={<PrivateRoute element={<CartComponent />}/>} />
-        <Route path="/checkout" element={<PrivateRoute element={<CheckoutPage />}/>} />
-        <Route path="/ordersummary" element={<PrivateRoute element={<OrderSummary />}/>} />
+        <Route
+          path="/cart"
+          element={<PrivateRoute element={<CartComponent />} />}
+        />
+        <Route
+          path="/checkout"
+          element={<PrivateRoute element={<CheckoutPage />} />}
+        />
+        <Route
+          path="/ordersummary"
+          element={<PrivateRoute element={<OrderSummary />} />}
+        />
         <Route path="/products" element={<ProductListPage />} />
-        <Route path="/profile" element={<PrivateRoute element={<UserProfile />}/>} />
-        <Route path="/wishlist" element={<PrivateRoute element={<WishlistPage />}/>} />
+        <Route
+          path="/profile"
+          element={<PrivateRoute element={<UserProfile />} />}
+        />
+        <Route
+          path="/wishlist"
+          element={<PrivateRoute element={<WishlistPage />} />}
+        />
         <Route path="/signup" element={<SignUpPage />} />
         <Route path="/mockman" element={<Mockman />} />
       </Routes>

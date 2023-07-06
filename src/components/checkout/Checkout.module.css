@@ -1,0 +1,53 @@
+.checkout {
+  position: fixed;
+  width: 40%;
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+
+.column {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.totalRow {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+  border-top: 1px solid #ccc;
+  padding-top: 5px;
+}
+
+.totalColumn {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.savedText {
+  font-size: 12px;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.checkoutButton {
+  padding: 10px;
+  background-color: #f2b01e;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+}

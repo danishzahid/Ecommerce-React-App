@@ -13,6 +13,7 @@ export const initialState = {
   categoryFilter: [],
   priceFilter: null,
   cart: [],
+  wishlist: [],
 };
 
 export const DataReducer = (state, action) => {
@@ -34,6 +35,10 @@ export const DataReducer = (state, action) => {
       break;
     case "SET_CART":
       return { ...state, cart: action.payload };
+      break;
+    case "SET_WISHLIST":
+      return { ...state, wishlist: action.payload };
+      break;
     default:
       break;
   }

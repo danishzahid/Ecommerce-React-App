@@ -1,17 +1,17 @@
 .cartPage {
-    display: flex;
-    gap: 20px;
-  }
-  
-  .cartProductListing {
-    flex: 1;
-  }
-  
-  .checkout {
-    flex: 1;
-  }
-  
-  .heading {
-    margin-bottom: 10px;
-  }
-  
+  display: flex;
+  gap: 20px;
+  min-height: 500px;
+}
+
+.cartProductListing {
+  flex: 1;
+}
+
+.checkout {
+  flex: 1;
+}
+
+.heading {
+  margin-bottom: 10px;
+}
