@@ -1,17 +1,17 @@
 .container {
-    display: flex;
-    height: auto;
-  }
-  
-  .sidebar {
-    flex: 0 0 20%;
-    background-color: #f2f2f2;
-    padding: 20px;
-  }
-  
-  .contentArea {
-    flex: 0 0 80%;
-    background-color: #fff;
-    padding: 20px;
-  }
-  
+  display: flex;
+  height: auto;
+}
+
+.sidebar {
+  flex: 0 0 15%;
+  background-color: #00539c;
+  /* padding: 8px; */
+  position: fixed;
+}
+
+.contentArea {
+  flex: 0 0 85%;
+  background-color: #fff;
+  margin-left: 15%;
+}
