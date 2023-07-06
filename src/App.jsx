@@ -4,6 +4,7 @@ import Mockman from "mockman-js";
 import { Route, Routes } from "react-router";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import "@fortawesome/fontawesome-free/css/all.min.css";
 
 import { Home } from "./pages/Home/Home";
 import { ErrorComponent } from "./pages/ErrorPage/ErrorComponent";

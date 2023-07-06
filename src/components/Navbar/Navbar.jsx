@@ -1,86 +1,104 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
+
+import logo from "../../images/logo/logo.jpg";
 
 const Navbar = () => {
   return (
     <div
       style={{
-        display: 'flex',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        backgroundColor: '#f2f2f2',
-        padding: '10px',
-        position: 'sticky',
-        top: 0
+        display: "flex",
+        justifyContent: "space-between",
+        alignItems: "center",
+        backgroundColor: "#00539C",
+        padding: "10px",
+        position: "sticky",
+        top: 0,
       }}
     >
       <div>
-        <img
-          src="logo.png"
-          alt="Logo"
-          style={{
-            width: '100px',
-            height: 'auto',
-          }}
-        />
+        <Link to={"/"}>
+          <img
+            src={logo}
+            alt="Logo"
+            style={{
+              width: "150px",
+              height: "40px",
+            }}
+          />
+        </Link>
       </div>
       <div>
         <input
           type="text"
           placeholder="Search"
           style={{
-            padding: '5px',
-            borderRadius: '5px',
-            border: 'none',
+            padding: "5px",
+            borderRadius: "5px",
+            border: "none",
+            width: "200px",
+            backgroundColor: "#eea47f",
           }}
         />
       </div>
       <div>
-        <Link to={"/products"} style={{
-            marginLeft: '10px',
-            marginRight: '10px',
-            textDecoration: 'none',
-            color: '#333',
-          }}>
-        Products
-        </Link>
-        <Link to={"/wishlist"} style={{
-            marginLeft: '10px',
-            marginRight: '10px',
-            textDecoration: 'none',
-            color: '#333',
-          }}>
-        Wishlist
-        </Link>
-        <Link to={"/cart"} style={{
-            marginLeft: '10px',
-            marginRight: '10px',
-            textDecoration: 'none',
-            color: '#333',
-          }}>
-        Cart
-        </Link>
-        <Link to={"/profile"} style={{
-            marginLeft: '10px',
-            marginRight: '10px',
-            textDecoration: 'none',
-            color: '#333',
-          }}>
-        Profile
-        </Link>
-        <button
+        <Link
+          to={"/products"}
           style={{
-            marginLeft: '10px',
-            marginRight: '10px',
-            padding: '5px',
-            borderRadius: '5px',
-            border: 'none',
-            backgroundColor: '#333',
-            color: '#fff',
+            marginLeft: "10px",
+            marginRight: "10px",
+            textDecoration: "none",
+            color: "#eea47f",
+          }}
+        >
+          Products
+        </Link>
+        <Link
+          to={"/wishlist"}
+          style={{
+            marginLeft: "10px",
+            marginRight: "10px",
+            textDecoration: "none",
+            color: "#eea47f",
+          }}
+        >
+          Wishlist
+        </Link>
+        <Link
+          to={"/cart"}
+          style={{
+            marginLeft: "10px",
+            marginRight: "10px",
+            textDecoration: "none",
+            color: "#eea47f",
+          }}
+        >
+          Cart
+        </Link>
+        <Link
+          to={"/profile"}
+          style={{
+            marginLeft: "10px",
+            marginRight: "10px",
+            textDecoration: "none",
+            color: "#eea47f",
+          }}
+        >
+          Profile
+        </Link>
+        {/* <button
+          style={{
+            marginLeft: "10px",
+            marginRight: "10px",
+            padding: "5px",
+            borderRadius: "5px",
+            border: "none",
+            backgroundColor: "#333",
+            color: "#fff",
           }}
         >
           Dark Mode
-        </button>
+        </button> */}
       </div>
     </div>
   );
