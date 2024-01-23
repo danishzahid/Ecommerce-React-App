@@ -1,0 +1,99 @@
+.footerContainer {
+  background-color: #00539c;
+  color: #eea47f;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: left;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.brandSection {
+  flex: 1;
+  max-width: 100%; /* Adjust as needed */
+  margin-bottom: 20px;
+}
+
+.brandSection h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.brandSection p {
+  margin: 0;
+}
+
+.socialIcons {
+  display: flex;
+  margin-top: 10px;
+}
+
+.socialIcons a {
+  color: #eea47f;
+  margin: 0 10px;
+  font-size: 20px;
+}
+
+.quickLinks {
+  flex: 1;
+  max-width: 100%; /* Adjust as needed */
+  margin-bottom: 20px;
+}
+
+.quickLinks h4 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.quickLinks ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.quickLinks a {
+  color: #eea47f;
+  text-decoration: none;
+}
+
+.contactUs {
+  flex: 1;
+  max-width: 100%; /* Adjust as needed */
+  margin-bottom: 20px;
+}
+
+.contactUs h4 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.copyRight {
+  flex: 1;
+  font-size: 14px;
+  text-align: center;
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Media Query for Mobile */
+@media (max-width: 600px) {
+  .footerContainer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .brandSection,
+  .quickLinks,
+  .contactUs {
+    max-width: 100%;
+  }
+
+  .copyRight {
+    position: static;
+    text-align: center;
+    margin-top: 20px;
+  }
+}

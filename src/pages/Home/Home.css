@@ -2,6 +2,7 @@
   display: flex;
   align-items: center;
   background-color: #eea47f;
+  padding: 20px;
 }
 
 .heading {
@@ -31,4 +32,20 @@
 .image img {
   max-width: 100%;
   height: auto;
+}
+
+/* Media Query for Mobile */
+@media (max-width: 600px) {
+  .header {
+    flex-direction: column; /* Stack items vertically on small screens */
+    text-align: center;
+  }
+
+  .heading {
+    margin-bottom: 20px; /* Add margin between heading and image on small screens */
+  }
+
+  .btn {
+    margin-top: 20px; /* Add margin between button and image on small screens */
+  }
 }

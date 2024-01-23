@@ -1,86 +1,71 @@
 .product {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-  }
-  
-  .imageContainer {
-    width: 200px;
-    height: 200px;
-    margin-bottom: 10px;
-    overflow: hidden;
-  }
-  
-  .image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  
-  .details {
-    text-align: center;
-    margin-bottom: 10px;
-  }
-  
-  .name {
-    margin-bottom: 5px;
-  }
-  
-  .material {
-    margin-bottom: 5px;
-  }
-  
-  .category {
-    margin-bottom: 5px;
-  }
-  
-  .priceContainer {
-    margin-bottom: 5px;
-  }
-  
-  .price {
-    font-size: 18px;
-    font-weight: bold;
-    color: #000;
-  }
-  
-  .originalPrice {
-    font-size: 14px;
-    color: #555;
-    text-decoration: line-through;
-  }
-  
-  .rating {
-    display: flex;
-    align-items: center;
-    margin-bottom: 5px;
-  }
-  
-  .star {
-    display: inline-block;
-    width: 15px;
-    height: 15px;
-    background-color: #f2b01e;
-    margin-right: 2px;
-  }
-  
-  .buttons {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-  
-  .addToCartButton,
-  .addToWishlistButton {
-    padding: 10px;
-    background-color: #f2b01e;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    width: 100%;
-  }
-  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.image {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.name {
+  margin-bottom: 5px;
+}
+
+.material,
+.category {
+  margin-bottom: 5px;
+}
+
+.priceContainer {
+  margin-bottom: 10px;
+}
+
+.price {
+  font-size: 16px;
+  color: #555;
+  text-decoration: line-through;
+}
+
+.originalPrice {
+  font-size: 18px;
+  font-weight: bold;
+  color: #000;
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.filledStar {
+  color: #f2b01e;
+  margin-right: 2px;
+}
+
+.emptyStar {
+  color: #ccc;
+  margin-right: 2px;
+}
+
+.buttons {
+  display: flex;
+}
+
+.addToCartButton,
+.addToWishlistButton {
+  padding: 10px;
+  background-color: #f2b01e;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 5px;
+}

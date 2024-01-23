@@ -19,7 +19,6 @@ export const products = [
       "https://apisap.fabindia.com/medias/10651653-1.jpg?context=bWFzdGVyfGltYWdlc3wxMzU3NDF8aW1hZ2UvanBlZ3xoOTYvaGE2Lzg5NzQ0Nzc3MjE2MzAvMTA2NTE2NTNfMS5qcGd8NmQ0NWI2NzNhNzQ5ZjZhN2I2YzZmYTc3NTFkY2Q5OGY4YWM3M2UzNzNjYjk0NjI0OTZjNGY2MmUzZDRhZWM4Yw",
   },
   {
-  
     _id: uuid(),
     id: 2,
     name: "Men's Jawahar Bandi",
@@ -124,8 +123,7 @@ export const products = [
     originalPrice: 699,
     categoryName: "winter",
     rating: 3,
-    image:
-      "https://m.media-amazon.com/images/I/61s-rBwYbeL._SY679_.jpg",
+    image: "https://m.media-amazon.com/images/I/61s-rBwYbeL._SY679_.jpg",
   },
   {
     _id: uuid(),

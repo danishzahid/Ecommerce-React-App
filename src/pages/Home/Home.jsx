@@ -4,8 +4,15 @@ import CategoryCardList from "../../components/CategoryCardList";
 import { Link } from "react-router-dom";
 import Review from "../../components/review/Review";
 import "@fortawesome/fontawesome-free/css/all.min.css";
+import { useEffect } from "react";
+import { useData } from "../../contexts/DataContext";
 
 export const Home = () => {
+  const { state, dispatch } = useData();
+  useEffect(() => {
+    dispatch({ type: "CLEAR_FILTER" });
+  }, []);
+
   return (
     <>
       <div className="header">

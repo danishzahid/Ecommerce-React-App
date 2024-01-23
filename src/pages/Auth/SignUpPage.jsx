@@ -42,7 +42,7 @@ export const SignUpPage = () => {
         navigate(`${comingFrom}`, { replace: true });
       }
       if (response.status === 422) {
-        console.log("chutiya hai kya lawde");
+        console.log("already exist");
       }
       // setUser({user:responseData.createdUser, token:responseData.encodedToken})
       // navigate("/products");
@@ -94,6 +94,15 @@ export const SignUpPage = () => {
           />
           {/* <input type="password" placeholder="Confirm Password" /> */}
           <button type="submit">Sign Up</button>
+          <button
+            style={{
+              marginTop: "10px",
+              color: "royalblue",
+              backgroundColor: "rgb(238, 164, 127)",
+            }}
+          >
+            Guest Login
+          </button>
         </form>
         <p>
           Already have an account? <Link to="/login">Login</Link>

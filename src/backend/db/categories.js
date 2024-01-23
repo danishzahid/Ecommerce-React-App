@@ -18,7 +18,7 @@ export const categories = [
     _id: uuid(),
     categoryName: "Women",
     imageSrc:
-      "https://biiba.in/wp-content/uploads/2022/09/image_759e81e2-9d3c-4d03-b579-d98831d7c9e9.jpg",
+      "https://i.pinimg.com/736x/75/7c/a8/757ca80827efd2379d4a52f4d89cba08.jpg",
     description:
       "We have exclusive Khadi Sari, suit-pices, Kashmiri Shawls and Staals. You will also love to checkout our range of silk fabrics.",
   },
@@ -34,7 +34,7 @@ export const categories = [
     _id: uuid(),
     categoryName: "Essentials",
     imageSrc:
-      "https://cdn.shopify.com/s/files/1/0697/5864/8611/products/261_B_CURTIAN.jpg?v=1674278124&width=750",
+      "https://i.pinimg.com/736x/2b/9b/df/2b9bdfb423405c9cedf963ade01ab11b.jpg",
     description:
       "Your home essentials from wide range of fancy curtains to all new fancy bedsheets, we also deal in all types of towels, rugs(dari) and carpets and may more...",
   },

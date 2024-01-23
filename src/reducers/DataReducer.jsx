@@ -7,6 +7,7 @@ import {
 } from "react";
 
 export const initialState = {
+  searchFilter: "",
   categories: [],
   productList: [],
   ratingFilter: null,
@@ -38,6 +39,18 @@ export const DataReducer = (state, action) => {
       break;
     case "SET_WISHLIST":
       return { ...state, wishlist: action.payload };
+      break;
+    case "CLEAR_FILTER":
+      return {
+        ...state,
+        searchFilter: "",
+        ratingFilter: null,
+        categoryFilter: [],
+        priceFilter: null,
+      };
+      break;
+    case "SET_INPUT":
+      return { ...state, searchFilter: action.payload };
       break;
     default:
       break;

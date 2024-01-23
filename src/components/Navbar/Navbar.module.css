@@ -1,0 +1,83 @@
+.navbarContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #00539c;
+  padding: 10px;
+  position: sticky;
+  top: 0;
+}
+
+.logo {
+  width: 150px;
+  height: 40px;
+}
+
+.searchInput {
+  padding: 5px;
+  border-radius: 5px;
+  border: none;
+  width: 200px;
+  background-color: #eea47f;
+}
+
+.navLinks {
+  display: flex;
+}
+
+.link {
+  margin-left: 10px;
+  margin-right: 10px;
+  text-decoration: none;
+  color: #eea47f;
+}
+
+/* Uncomment the following block when using the dark mode button */
+/*
+  .darkModeButton {
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+    background-color: #333;
+    color: #fff;
+  }
+  */
+
+/* Media Query for Mobile */
+@media (max-width: 600px) {
+  .navbarContainer {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 5px; /* Adjust padding for mobile */
+  }
+
+  .logo {
+    width: 120px; /* Adjust logo size for mobile */
+    height: 32px; /* Adjust logo size for mobile */
+    margin-bottom: 10px; /* Add margin for spacing */
+  }
+
+  .searchInput {
+    width: 100%; /* Take full width on mobile */
+    margin-bottom: 10px; /* Add margin for spacing */
+  }
+
+  .navLinks {
+    flex-direction: column;
+    width: 100%; /* Take full width on mobile */
+  }
+
+  .link {
+    margin: 5px 0; /* Adjust margin for spacing */
+  }
+
+  /* Uncomment the following block when using the dark mode button */
+  /*
+    .darkModeButton {
+      width: 100%; 
+      margin: 10px 0;
+    }
+    */
+}

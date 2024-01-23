@@ -9,6 +9,7 @@
   background-color: #b0a4a4;
   width: 250px;
   height: 300px;
+  margin: 10px; /* Add margin between cards on small screens */
 }
 
 .cardImage {
@@ -24,4 +25,11 @@
   font-size: 25px;
   font-weight: bold;
   color: #820000;
+}
+
+/* Media Query for Mobile */
+@media (max-width: 600px) {
+  .card {
+    width: 90%; /* Adjust width for better readability on small screens */
+  }
 }

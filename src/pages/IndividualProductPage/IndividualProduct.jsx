@@ -2,12 +2,14 @@ import React, { useContext, useEffect, useState } from "react";
 import styles from "./IndividualProduct.module.css";
 import { useParams } from "react-router";
 import { DataContext } from "../../contexts/DataContext";
+import { AuthContext } from "../../contexts/AuthContext";
 
 const IndividualProduct = () => {
   const { productId } = useParams();
   console.log(productId);
   const { state, dispatch } = useContext(DataContext);
   const [product, setProduct] = useState({});
+  const { user } = useContext(AuthContext);
 
   // const product = state.productList.find((product) => product.id == productId);
   // console.log(product)
@@ -29,10 +31,74 @@ const IndividualProduct = () => {
 
   const handleAddToCart = () => {
     // Add to cart logic here
+    const addItemToCartHandler = async (item) => {
+      console.log(item);
+      try {
+        const response = await fetch("/api/user/cart", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            authorization: user.token,
+          },
+          body: JSON.stringify({
+            product: item,
+          }),
+        });
+
+        if (response.status === 201 || response.status === 200) {
+          const responseData = await response.json();
+          console.log(responseData);
+          dispatch({ type: "SET_CART", payload: responseData.cart });
+        }
+      } catch (e) {
+        console.log(e);
+      }
+    };
+    addItemToCartHandler(product);
   };
 
   const handleAddToWishlist = () => {
     // Add to wishlist logic here
+    const addItemToWishlistHandler = async (item) => {
+      console.log(item);
+      try {
+        const response = await fetch("/api/user/wishlist", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            authorization: user.token,
+          },
+          body: JSON.stringify({
+            product: item,
+          }),
+        });
+
+        if (response.status === 201 || response.status === 200) {
+          const responseData = await response.json();
+          console.log(responseData);
+          dispatch({ type: "SET_WISHLIST", payload: responseData.wishlist });
+        }
+      } catch (e) {
+        console.log(e);
+      }
+    };
+    addItemToWishlistHandler(product);
+  };
+  const renderStars = () => {
+    const ratingArray = Array.from({ length: 5 }, (_, index) => index + 1);
+
+    return (
+      <div className={styles.rating}>
+        {ratingArray.map((star) => (
+          <i
+            key={star}
+            className={`fas fa-star ${
+              star <= product.rating ? styles.filledStar : styles.emptyStar
+            }`}
+          ></i>
+        ))}
+      </div>
+    );
   };
 
   return (
@@ -54,11 +120,12 @@ const IndividualProduct = () => {
             ${product?.originalPrice}
           </span>
         </div>
-        <div className={styles.rating}>
+        {/* <div className={styles.rating}>
           {Array.from({ length: product?.rating }, (_, index) => (
             <span key={index} className={styles.star}></span>
           ))}
-        </div>
+        </div> */}
+        <div className={styles.rating}>{renderStars()}</div>
       </div>
       <div className={styles.buttons}>
         <button className={styles.addToCartButton} onClick={handleAddToCart}>
