@@ -52,7 +52,7 @@ export const products = [
     categoryName: "men",
     rating: 4,
     image:
-      "https://cdn.shopify.com/s/files/1/0470/0389/3911/products/Devalayam_Mix_1800x1800.jpg?v=1677234249",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWhFeDici3VlkPv3IGO_U6hetObZBPjI5emg&usqp=CAU",
   },
   {
     _id: uuid(),
@@ -191,6 +191,6 @@ export const products = [
     categoryName: "essentials",
     rating: 4,
     image:
-      "https://cdn.shopify.com/s/files/1/2385/5429/products/Travellers-Palm-and-Giraffe-Blockprint-Bath-Towel-Combo-bath-towels-House-of-Ekam_75x.jpg?v=1665611879",
+      "https://cdn.pixabay.com/photo/2020/12/21/13/50/bath-towels-5849999_640.jpg",
   },
 ];

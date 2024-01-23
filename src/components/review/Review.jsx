@@ -17,8 +17,7 @@ const reviewsData = [
     rating: 5,
     review:
       "Vestibulum lacinia arcu in nisl rhoncus consequat. Quisque vel nunc libero.",
-    photo:
-      "https://media.licdn.com/dms/image/C5603AQHez4IA7i6dGA/profile-displayphoto-shrink_800_800/0/1592207162697?e=2147483647&v=beta&t=7XXT4qCV9FtgtDdxUBWy9E5zOvDKrilJj6UEAFA_v7A",
+    photo: "https://avatars.githubusercontent.com/u/62925911?v=4",
   },
   {
     id: 3,
@@ -27,7 +26,7 @@ const reviewsData = [
     review:
       "Integer nec mi ut justo gravida consectetur. Curabitur non mauris eget sem gravida venenatis.",
     photo:
-      "https://media.licdn.com/dms/image/C5603AQHez4IA7i6dGA/profile-displayphoto-shrink_800_800/0/1592207162697?e=2147483647&v=beta&t=7XXT4qCV9FtgtDdxUBWy9E5zOvDKrilJj6UEAFA_v7A",
+      "https://i.ibb.co/FYS7xR0/Whats-App-Image-2023-10-30-at-12-22-20-PM.jpg",
   },
   // Add more dummy review objects as needed
 ];

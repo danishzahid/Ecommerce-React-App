@@ -6,12 +6,41 @@
 .sidebar {
   flex: 0 0 15%;
   background-color: #00539c;
-  /* padding: 8px; */
   position: fixed;
+  height: 100vh;
+  overflow-y: auto;
 }
 
 .contentArea {
   flex: 0 0 85%;
   background-color: #fff;
   margin-left: 15%;
+}
+
+/* Media Query for Mobile */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    position: static;
+    height: auto;
+    margin-bottom: 20px;
+  }
+
+  .contentArea {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  /* Adjust the order for mobile view */
+  .contentArea {
+    order: 2;
+  }
+
+  .sidebar {
+    order: 1;
+  }
 }
