@@ -6,10 +6,10 @@ import { AuthContext } from "../../contexts/AuthContext";
 
 export const SignUpPage = () => {
   const navigate = useNavigate();
-  const [firstName, setFirstName] = useState("manoj");
-  const [lastName, setLastName] = useState("dalle");
-  const [email, setEmail] = useState("manoj@dalle.com");
-  const [password, setPassword] = useState("1234");
+  const [firstName, setFirstName] = useState("Danish");
+  const [lastName, setLastName] = useState("Zahid");
+  const [email, setEmail] = useState("danish@gmail.com");
+  const [password, setPassword] = useState("12345");
 
   const { user, setUser } = useContext(AuthContext);
   const location = useLocation();
